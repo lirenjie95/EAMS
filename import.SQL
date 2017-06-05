@@ -3,7 +3,7 @@ Navicat Premium Data Transfer
 Source Server		: localhost
 Source Server Type	: SQL Server 2014
 Source Database		: HW
-File Encoding		: utf-8
+File Encoding		: gbk
 */
 
 -- Score_to_GPA: e.g. A -> 4.0
