@@ -9,7 +9,7 @@ public partial class mainpage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Pubname"] == null)
+        if (Session["Pubno"] == null)
         {
             Server.Transfer("Entry.aspx");
         }

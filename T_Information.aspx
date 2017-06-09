@@ -10,10 +10,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <center>
-            <asp:GridView ID="GridView1" runat="server" Visible="false"></asp:GridView>
-            <asp:Button ID="Button1" runat="server" Text="<<返回主界面" OnClick="Button1_Click"></asp:Button>
-        </center>
+        <asp:GridView ID="GridView1" runat="server" Visible="false"></asp:GridView>
+        <asp:Button ID="Button1" runat="server" Text="<<返回主界面" OnClick="Button1_Click"></asp:Button>
     </div>
     </form>
 </body>

@@ -73,17 +73,6 @@
                 document.getElementById("T_Information").style.display = "none";
             }
         }
-        function Tea_Change()//javascript函数，功能为在iframe中载入T_Change.aspx页面
-        {
-            if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
-            {
-                document.getElementById("right_iframe").src = "T_Change.aspx";
-            }
-            else
-            {
-                document.getElementById("T_Change").style.display = "none";
-            }
-        }
         function Tea_Class()//javascript函数，功能为在iframe中载入T_Class.aspx页面
         {
             if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
@@ -95,28 +84,6 @@
                 document.getElementById("T_Class").style.display = "none";
             }
         }
-        function Tea_AddClass()//javascript函数，功能为在iframe中载入T_AddClass.aspx页面
-        {
-            if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
-            {
-                document.getElementById("right_iframe").src = "T_AddClass.aspx";
-            }
-            else
-            {
-                document.getElementById("T_AddClass").style.display = "none";
-            }
-        }
-        function Tea_DeleteClass()//javascript函数，功能为在iframe中载入T_DeleteClass.aspx页面
-        {
-            if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
-            {
-                document.getElementById("right_iframe").src = "T_DeleteClass.aspx";
-            }
-            else
-            {
-                document.getElementById("T_DeleteClass").style.display = "none";
-            }
-        }
         function Tea_ClassMark()//javascript函数，功能为在iframe中载入T_ClassMark.aspx页面
         {
             if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
@@ -126,17 +93,6 @@
             else
             {
                 document.getElementById("T_ClassMark").style.display = "none";
-            }
-        }
-        function Tea_ChangeMark()//javascript函数，功能为在iframe中载入T_ChangeMark.aspx页面
-        {
-            if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
-            {
-                document.getElementById("right_iframe").src = "T_ChangeMark.aspx";
-            }
-            else
-            {
-                document.getElementById("T_ChangeMark").style.display = "none";
             }
         }
         function Tea_InputMark()//javascript函数，功能为在iframe中载入T_InputMark.aspx页面
@@ -163,7 +119,7 @@
         </center>
         <div style="position:absolute; right:10px; top:0px">
             <asp:Label ID="Label2" runat="server"></asp:Label><br />
-            <asp:Label ID="Label3" runat="server" Text="欢迎您"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="欢迎光临某旦的选课系统(仿)"></asp:Label>
         </div>
     </div>
     <div id="left" style="position:absolute; height:93%; width:200px; top:55px; background-color:gray; border:solid">
@@ -171,19 +127,15 @@
             <asp:Label ID="Label4" runat="server" Text="学生" Font-Size="XX-Large"></asp:Label><br />
             <input type="button" id="S_Information" value="学生个人信息" onclick="Stu_Information()" /><br />
             <input type="button" id="S_Change" value="修改个人信息" onclick="Stu_Change()" /><br />
-            <input type="button" id="S_Class" value="查询已选课程" onclick="Stu_Class()" /><br />
-            <input type="button" id="S_Mark" value="查询课程成绩" onclick="Stu_Mark()" /><br />
+            <input type="button" id="S_Class" value="查询已选课程及教材" onclick="Stu_Class()" /><br />
+            <input type="button" id="S_Mark" value="查询修读情况" onclick="Stu_Mark()" /><br />
             <input type="button" id="S_SelectClass" value="学生选课" onclick="Stu_SelectClass()" />
         </div>
         <div id="Teacher" style="position:absolute; height:400px; width:200px; background-color:brown; top:415px">
             <asp:Label ID="Label5" runat="server" Text="教师" Font-Size="XX-Large"></asp:Label><br />
             <input type="button" id="T_Information" value="教师个人信息" onclick="Tea_Information()" /><br />
-            <input type="button" id="T_Change" value="修改个人信息" onclick="Tea_Change()" /><br />
             <input type="button" id="T_Class" value="查询已开课程" onclick="Tea_Class()" /><br />
-            <input type="button" id="T_AddClass" value="增开课程" onclick="Tea_AddClass()" /><br />
-            <input type="button" id="T_DeleteClass" value="课程是否可选" onclick="Tea_DeleteClass()" /><br />
             <input type="button" id="T_ClassMark" value="查询学生成绩" onclick="Tea_ClassMark()" /><br />
-            <input type="button" id="T_ChangeMark" value="修改学生成绩" onclick="Tea_ChangeMark()" /><br />
             <input type="button" id="T_InputMark" value="录入学生成绩" onclick="Tea_InputMark()" />
         </div>
     </div>

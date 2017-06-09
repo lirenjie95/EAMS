@@ -18,7 +18,9 @@ public partial class T_Information : System.Web.UI.Page
         //根据登录的用户名，在数据库中检索该教师的个人信息，并显示在gridview中
         string con = "server=10.153.170.140;uid=sa;pwd=lrj@130279;database=HW;Trusted_Connection=no";
         SqlConnection mycon = new SqlConnection(con);
-        string sql = "select PK as 教师编号, name as 教师姓名, sex as 性别, class as 科目, t_username as 用户名, memo as 备注 from Teacher where t_username = '" + Session["Pubname"].ToString() + "'";
+        string sql =
+            "SELECT Tno AS 工号,Tname AS 姓名,Tsex as 性别,Tbirth AS 出生日期,Tstage AS 职称,Ttel AS 电话,SDM.Mname AS 专业" +
+            " FROM Teacher,SDM WHERE Tno = '" + Session["Pubno"].ToString() + "' AND Teacher.Major=SDM.Major";
         mycon.Open();
         SqlDataAdapter myda = new SqlDataAdapter(sql, mycon);
         DataSet myds = new DataSet();
