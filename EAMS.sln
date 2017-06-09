@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EAMS", "http://localhost:20264", "{B45F30C1-D86E-4CC5-A3CD-19A83C574E68}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = EAMS", "http://localhost:4769", "{FAD09118-965C-42EE-BC9C-F19D9D47FF13}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_20264"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\EAMS\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20264\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4769"
+		Debug.AspNetCompiler.PhysicalPath = "."
+		Debug.AspNetCompiler.TargetPath = "EAMS\localhost_4769\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_20264"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\EAMS\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20264\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4769"
+		Release.AspNetCompiler.PhysicalPath = "."
+		Release.AspNetCompiler.TargetPath = "EAMS\localhost_4769\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\Desktop\EAMS\"
+		SlnRelativePath = "."
 	EndProjectSection
 EndProject
 Global
@@ -27,8 +27,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B45F30C1-D86E-4CC5-A3CD-19A83C574E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B45F30C1-D86E-4CC5-A3CD-19A83C574E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD09118-965C-42EE-BC9C-F19D9D47FF13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD09118-965C-42EE-BC9C-F19D9D47FF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
