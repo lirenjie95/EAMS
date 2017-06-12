@@ -51,6 +51,16 @@
                 document.getElementById("S_Mark").style.display = "none";
             }
         }
+        function Stu_Select()//javascript函数，功能为在iframe中载入Select.aspx页面
+        {
+            if ("<%=Session["role"].ToString()%>" == "Student")//判断登录成员是否为学生
+            {
+                document.getElementById("right_iframe").src = "Select.aspx";
+            }
+            else {
+                document.getElementById("Select").style.display = "none";
+            }
+        }
         function Tea_Information()//javascript函数，功能为在iframe中载入T_Information.aspx页面
         {
             if ("<%=Session["role"].ToString()%>" == "Teacher")//判断登录成员是否为教师
@@ -93,11 +103,11 @@
             <asp:Button ID="Button1" runat="server" Text="退出登录" OnClick="Button1_Click" />
         </div>
         <center>
-            <asp:Label ID="Label1" runat="server" Text="信息平台" Font-Size="XX-Large"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="某旦的教务系统(仿)" Font-Size="XX-Large"></asp:Label>
         </center>
         <div style="position:absolute; right:10px; top:0px">
             <asp:Label ID="Label2" runat="server"></asp:Label><br />
-            <asp:Label ID="Label3" runat="server" Text="欢迎光临某旦的选课系统(仿)"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="欢迎光临某旦的教务系统(仿)"></asp:Label>
         </div>
     </div>
     <div id="left" style="position:absolute; height:93%; width:200px; top:55px; background-color:gray; border:solid">
@@ -107,6 +117,7 @@
             <input type="button" id="S_Change" value="修改个人信息" onclick="Stu_Change()" /><br />
             <input type="button" id="S_Class" value="查询已选课程及教材" onclick="Stu_Class()" /><br />
             <input type="button" id="S_Mark" value="查询修读情况" onclick="Stu_Mark()" /><br />
+            <input type="button" id="Select" value="学生选课" onclick="Stu_Select()" /><br />
         </div>
         <div id="Teacher" style="position:absolute; height:400px; width:200px; background-color:brown; top:415px">
             <asp:Label ID="Label5" runat="server" Text="教师" Font-Size="XX-Large"></asp:Label><br />

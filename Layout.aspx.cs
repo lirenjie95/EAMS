@@ -14,7 +14,14 @@ public partial class Layout : System.Web.UI.Page
             Server.Transfer("Entry.aspx");
         }
         Label2.Text = DateTime.Now.ToString("yyyy/MM/dd");//获取登录时间
-        Label3.Text = Session["Pubname"].ToString() + "，" + "欢迎您！";
+        if (Session["role"].ToString() == "Student")
+        {
+            Label3.Text = Session["Pubname"].ToString() + " 同学，欢迎您！";
+        }
+        else
+        {
+            Label3.Text = Session["Pubname"].ToString() + " 老师，欢迎您！";
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {

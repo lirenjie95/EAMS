@@ -19,11 +19,12 @@ public partial class S_Class : System.Web.UI.Page
         string con = "server=10.153.170.140;uid=sa;pwd=lrj@130279;database=HW;Trusted_Connection=no";
         SqlConnection mycon = new SqlConnection(con);
         string sql = 
-            " SELECT DISTINCT SC.Cno AS 课程编码,Course.Cname AS 课程名称,Course.Credit AS 学分,Course.Cattribute AS 课程属性," +
+            " SELECT Course.Cno AS 课程编码,Course.Cname AS 课程名称,Course.Credit AS 学分,Course.Cattribute AS 课程属性," +
             " Course.Ctime AS 课程时间,Course.Cloc AS 课程地点, Course.Call AS 课程人数,Course.Cnow AS 已选人数,"+
             " SC.Semester AS 学期,Teacher.Tname as 任课教师 FROM SC,Teacher,Course,TC"+
             " WHERE SC.Sno = '"+Session["Pubno"].ToString()+"' AND"+
-            " TC.Cno = SC.Cno AND Teacher.Tno = TC.Tno AND SC.cno = Course.Cno"+
+            " TC.Semester = SC.Semester AND SC.Semester = Course.Semester AND"+
+            " TC.Cno = SC.Cno AND Teacher.Tno = TC.Tno AND SC.Cno = Course.Cno"+
             " ORDER BY SC.Semester";
         mycon.Open();
         SqlDataAdapter myda = new SqlDataAdapter(sql, mycon);
@@ -33,11 +34,13 @@ public partial class S_Class : System.Web.UI.Page
         GridView1.DataSource = myds.Tables["Course"];
         GridView1.DataBind();
         sql =
-            " SELECT DISTINCT SC.Cno AS 课程编码,Course.Cname AS 课程名称,Book.Bno AS ISBN编码,Book.Bname AS 书名," +
-            " Book.Bauthor AS 作者,Book.Bpublish AS 出版社, Book.Bvalue AS 价格" +
+            " SELECT Course.Cno AS 课程编码,Course.Cname AS 课程名称,SC.Semester AS 学期,"+
+            " Book.Bno AS ISBN编码,Book.Bname AS 书名,Book.Bauthor AS 作者,Book.Bpublish AS 出版社, Book.Bvalue AS 价格" +
             " FROM SC,TC,Book,Course"+
             " WHERE SC.Sno = '" + Session["Pubno"].ToString() + "' AND" +
-            " TC.Cno = SC.Cno AND SC.cno = Course.Cno AND TC.Bno = Book.Bno";
+            " TC.Semester = SC.Semester AND SC.Semester = Course.Semester AND" +
+            " TC.Cno = SC.Cno AND SC.Cno = Course.Cno AND TC.Bno = Book.Bno"+
+            " ORDER BY SC.Semester";
         myda = new SqlDataAdapter(sql, mycon);
         myda.Fill(myds, "Book");
         GridView2.Visible = true;
